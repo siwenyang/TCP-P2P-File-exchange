@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#Run script for the server distributed as a part of 
+#Assignment 3
+#Computer Networks (CS 456)
+#
+#Number of parameters: 1
+#Parameter:
+#         no parameters
+
+#For Java implementation
+java server

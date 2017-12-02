@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#Run script for client distributed as part of 
+#Assignment 3
+#Computer Networks (CS 456)
+#Number of parameters: 6
+#Parameter:
+#    $1: <host>
+#    $2: <port>
+#    $3: <op-string>
+#    $4: <file name>
+#    $5: <send|recy size> <wait time>
+
+#For Java implementation
+java client $1 $2 $3 $4 $5 $6

@@ -1,0 +1,47 @@
+SIWEN YANG 20574305
+
+CONTENTS OF THIS FILE
+---------------------
+ * Introduction
+ * Design
+ * Requirements
+ * Installation
+
+ 
+INTRODUCTION
+------------
+In this project, implement a server that facilitates a file exchange between clients.
+There are three ways for client:
+1. terminate server: client <host> <port> F
+2. download: client <host> <port> G<key> <file name> <recv size>
+3. upload: client <host> <port> P<key> <file name> <send size> <wait time>.
+There is one way for server:
+server
+
+
+DESIGN
+------
+The server open up the socket, and always listen on the socket.
+The client send message to server to tell server who they are (uploader or downloader).
+If the server find the matched clients(one uploader and one downloder), it will open a new thread
+for the uploader and downloader do file exchange.
+Once the client ask for terminate, server recieve terminate message, wait all thread finish the file
+exchange, and terminate the remain clients, finally terminate server.
+
+
+REQUIREMENTS
+------------
+Use ubuntu1604-002.student.cs.uwaterloo.ca to test
+Java version: 1.8.0_131
+make version: GNU Make 4.1
+
+
+INSTALLATION
+------------
+Use $make all to compile.
+Then run $./server.
+Then run either  $./client <host> <port> G<key> <file name> <recv size>
+or $./client <host> <port> P<key> <file name> <send size> <wait time>,
+but run downloader before upload.
+Finally, $./client <host> <port> F.
+At last, use make clean.
